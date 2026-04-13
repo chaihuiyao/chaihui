@@ -37,58 +37,74 @@
 <div id="app" class="h-full">
     <!-- Header -->
     <header class="bg-gradient-to-br from-sky-400 to-blue-400 p-6 rounded-b-[2.5rem] shadow-md relative overflow-hidden">
-        <!-- 裝飾用背景：葉片 -->
-        <div class="absolute -top-10 -right-10 opacity-10">
-            <i class="fas fa-leaf text-9xl text-white"></i>
+        
+        <!-- 裝飾 1：白椰子樹剪影 (左上背景) -->
+        <div class="absolute -top-10 -left-8 w-60 h-60 opacity-15 transform -rotate-6 pointer-events-none">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <g fill="#ffffff" transform="scale(-1, 1) translate(-100, 0)">
+                    <!-- 樹幹 -->
+                    <path d="M40,100 Q50,60 55,20 Q60,60 52,100 Z" />
+                    <!-- 椰子 -->
+                    <circle cx="48" cy="25" r="4" />
+                    <circle cx="62" cy="23" r="3.5" />
+                    <circle cx="55" cy="30" r="4.5" />
+                    <!-- 葉片 -->
+                    <path d="M55,20 Q30,5 5,30 Q30,25 55,20 Z" />
+                    <path d="M55,20 Q50,-10 75,-5 Q65,10 55,20 Z" />
+                    <path d="M55,20 Q85,5 100,25 Q80,30 55,20 Z" />
+                    <path d="M55,20 Q85,35 95,65 Q70,45 55,20 Z" />
+                    <path d="M55,20 Q25,40 10,65 Q35,45 55,20 Z" />
+                </g>
+            </svg>
         </div>
         
-        <!-- 裝飾：雞蛋花 1 (右下) -->
-        <div class="absolute -bottom-5 -right-3 w-28 h-28 opacity-95 transform rotate-12 drop-shadow-lg">
+        <!-- 裝飾 3：可愛清邁小象 (右下獨立) -->
+        <div class="absolute -bottom-1 right-2 w-28 h-28 opacity-95 drop-shadow-lg pointer-events-none z-10">
             <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <radialGradient id="plumeria-grad1" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%" stop-color="#F59E0B"/> <!-- 橘黃心 -->
-                        <stop offset="35%" stop-color="#FEF3C7"/> <!-- 鵝黃過渡 -->
-                        <stop offset="100%" stop-color="#FFFFFF"/> <!-- 白色花瓣 -->
-                    </radialGradient>
-                </defs>
-                <g transform="translate(50, 50) rotate(15)">
-                    <!-- 5片花瓣 -->
-                    <path d="M0,0 C 15,-15 22,-40 0,-46 C -22,-40 -15,-15 0,0 Z" fill="url(#plumeria-grad1)" transform="rotate(0)" />
-                    <path d="M0,0 C 15,-15 22,-40 0,-46 C -22,-40 -15,-15 0,0 Z" fill="url(#plumeria-grad1)" transform="rotate(72)" />
-                    <path d="M0,0 C 15,-15 22,-40 0,-46 C -22,-40 -15,-15 0,0 Z" fill="url(#plumeria-grad1)" transform="rotate(144)" />
-                    <path d="M0,0 C 15,-15 22,-40 0,-46 C -22,-40 -15,-15 0,0 Z" fill="url(#plumeria-grad1)" transform="rotate(216)" />
-                    <path d="M0,0 C 15,-15 22,-40 0,-46 C -22,-40 -15,-15 0,0 Z" fill="url(#plumeria-grad1)" transform="rotate(288)" />
-                    <circle cx="0" cy="0" r="2" fill="#D97706" opacity="0.6"/>
+                <g transform="translate(0, 5)">
+                    <!-- 身體 -->
+                    <ellipse cx="50" cy="70" rx="24" ry="20" fill="#CBD5E1"/>
+                    <!-- 腿部 -->
+                    <rect x="30" y="75" width="12" height="16" rx="6" fill="#94A3B8"/>
+                    <rect x="58" y="75" width="12" height="16" rx="6" fill="#94A3B8"/>
+                    <!-- 腳趾 -->
+                    <circle cx="33" cy="89" r="1.5" fill="#F8FAFC"/>
+                    <circle cx="39" cy="89" r="1.5" fill="#F8FAFC"/>
+                    <circle cx="61" cy="89" r="1.5" fill="#F8FAFC"/>
+                    <circle cx="67" cy="89" r="1.5" fill="#F8FAFC"/>
+                    <!-- 耳朵 (深色放後面) -->
+                    <ellipse cx="20" cy="45" rx="15" ry="24" transform="rotate(-25 20 45)" fill="#94A3B8"/>
+                    <ellipse cx="80" cy="45" rx="15" ry="24" transform="rotate(25 80 45)" fill="#94A3B8"/>
+                    <!-- 內耳粉紅 -->
+                    <ellipse cx="18" cy="47" rx="8" ry="15" transform="rotate(-25 18 47)" fill="#F472B6" opacity="0.4"/>
+                    <ellipse cx="82" cy="47" rx="8" ry="15" transform="rotate(25 82 47)" fill="#F472B6" opacity="0.4"/>
+                    <!-- 頭部 -->
+                    <circle cx="50" cy="48" r="22" fill="#CBD5E1"/>
+                    <!-- 泰式頭飾 -->
+                    <path d="M 40,30 L 50,15 L 60,30 Z" fill="#FBBF24"/>
+                    <circle cx="50" cy="12" r="3" fill="#FBBF24"/>
+                    <path d="M 35,33 Q 50,38 65,33" stroke="#F59E0B" stroke-width="3" fill="none" stroke-linecap="round"/>
+                    <!-- 鼻子 (上揚噴水) -->
+                    <path d="M 50,55 C 50,75 75,80 82,60" stroke="#CBD5E1" stroke-width="12" stroke-linecap="round" fill="none"/>
+                    <!-- 眼睛 (笑眼) -->
+                    <path d="M 36,46 Q 40,42 44,46" stroke="#374151" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                    <path d="M 56,46 Q 60,42 64,46" stroke="#374151" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                    <!-- 腮紅 -->
+                    <circle cx="34" cy="52" r="3.5" fill="#FDA4AF" opacity="0.8"/>
+                    <circle cx="66" cy="52" r="3.5" fill="#FDA4AF" opacity="0.8"/>
+                    <!-- 噴水特效 -->
+                    <path d="M 82,55 C 82,40 70,30 65,35" stroke="#38BDF8" stroke-width="2.5" stroke-linecap="round" fill="none" stroke-dasharray="3 4"/>
+                    <circle cx="62" cy="37" r="3" fill="#38BDF8"/>
+                    <circle cx="70" cy="28" r="2" fill="#38BDF8"/>
+                    <circle cx="78" cy="35" r="1.5" fill="#38BDF8"/>
                 </g>
             </svg>
         </div>
 
-        <!-- 裝飾：雞蛋花 2 (左上) -->
-        <div class="absolute -top-4 -left-4 w-16 h-16 opacity-90 transform -rotate-45 drop-shadow-md">
-            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <radialGradient id="plumeria-grad2" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%" stop-color="#F59E0B"/>
-                        <stop offset="35%" stop-color="#FEF3C7"/>
-                        <stop offset="100%" stop-color="#FFFFFF"/>
-                    </radialGradient>
-                </defs>
-                <g transform="translate(50, 50) rotate(-10)">
-                    <path d="M0,0 C 15,-15 22,-40 0,-46 C -22,-40 -15,-15 0,0 Z" fill="url(#plumeria-grad2)" transform="rotate(0)" />
-                    <path d="M0,0 C 15,-15 22,-40 0,-46 C -22,-40 -15,-15 0,0 Z" fill="url(#plumeria-grad2)" transform="rotate(72)" />
-                    <path d="M0,0 C 15,-15 22,-40 0,-46 C -22,-40 -15,-15 0,0 Z" fill="url(#plumeria-grad2)" transform="rotate(144)" />
-                    <path d="M0,0 C 15,-15 22,-40 0,-46 C -22,-40 -15,-15 0,0 Z" fill="url(#plumeria-grad2)" transform="rotate(216)" />
-                    <path d="M0,0 C 15,-15 22,-40 0,-46 C -22,-40 -15,-15 0,0 Z" fill="url(#plumeria-grad2)" transform="rotate(288)" />
-                    <circle cx="0" cy="0" r="2" fill="#D97706" opacity="0.6"/>
-                </g>
-            </svg>
-        </div>
-
-        <div class="relative z-10 pt-4">
-            <p class="text-sky-50 text-sm font-medium tracking-wider mb-1">4/18 - 4/21</p>
-            <h1 class="text-3xl font-bold text-white mb-2 drop-shadow-sm">清邁 Chill 遊</h1>
-            <p class="text-sm text-sky-100 flex items-center gap-2 drop-shadow-sm">
+        <div class="relative z-10 pt-4 pl-4">
+            <p class="text-sky-50 text-sm font-medium tracking-wider mb-1 drop-shadow-md">4/18 - 4/21</p>
+            <h1 class="text-3xl font-bold text-white mb-2 drop-shadow-md">清邁 Chill 遊</h1>
+            <p class="text-sm text-sky-100 flex items-center gap-2 drop-shadow-md">
                 <i class="fas fa-location-dot"></i> 泰國 · 清邁
             </p>
         </div>
@@ -206,6 +222,27 @@
                             <span class="text-[11px] text-amber-600 font-medium"><i class="far fa-clock mr-1"></i> {{ market.time }}</span>
                         </div>
                         <p class="text-[11px] text-gray-400 mt-1">{{ market.desc }}</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- 放鬆 SPA -->
+            <h3 class="font-bold text-gray-700 mb-3 flex items-center"><i class="fas fa-spa text-purple-500 mr-2"></i> 放鬆 SPA</h3>
+            <div class="space-y-3 mb-6">
+                <a v-for="spa in spas" :key="spa.name" :href="spa.link" target="_blank" class="block bg-white p-3.5 rounded-xl shadow-sm border border-gray-100 flex gap-3 transform transition hover:scale-[1.02] active:scale-95">
+                    <div class="w-12 h-12 rounded-lg bg-purple-50 text-purple-500 flex items-center justify-center shrink-0">
+                        <i class="fas fa-spa text-xl"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start">
+                            <h4 class="font-bold text-gray-800 text-sm">{{ spa.name }}</h4>
+                            <i class="fas fa-external-link-alt text-gray-300 text-[10px]"></i>
+                        </div>
+                        <div class="flex items-center gap-2 mt-1">
+                            <span class="text-[10px] bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded font-medium">{{ spa.days }}</span>
+                            <span class="text-[11px] text-purple-600 font-medium"><i class="far fa-clock mr-1"></i> {{ spa.time }}</span>
+                        </div>
+                        <p class="text-[11px] text-gray-400 mt-1">{{ spa.desc }}</p>
                     </div>
                 </a>
             </div>
@@ -459,6 +496,15 @@
                 { name: '雨樹市集', days: '僅週六、日', time: '09:00-14:00', desc: '距離較遠，吃得少但東西特別', link: 'https://www.google.com/maps/search/?api=1&query=Chamcha+Market+Chiang+Mai' }
             ]
 
+            // SPA 按摩清單
+            const spas = [
+                { name: 'Sense Massage Night Bazaar', days: '每日開放', time: '10:00-23:00', desc: '評價 4.7 星 / 水療按摩', link: 'https://www.google.com/maps/search/?api=1&query=Sense+Massage+Night+Bazaar+Chiang+Mai' },
+                { name: 'Makkha Health & Spa', days: '每日開放', time: '10:00-22:00', desc: '評價 4.8 星 / 精緻水療中心', link: 'https://www.google.com/maps/search/?api=1&query=Makkha+Health+and+Spa+Chiang+Mai' },
+                { name: 'Ziri Massage and Spa', days: '每日開放', time: '10:00-22:00', desc: '滿分 5.0 星好評', link: 'https://www.google.com/maps/search/?api=1&query=Ziri+Massage+and+Spa+Chiang+Mai' },
+                { name: 'sum bamboo massage', days: '每日開放', time: '10:00-22:00', desc: '評價 4.8 星 / 特色竹子按摩', link: 'https://www.google.com/maps/search/?api=1&query=sum+bamboo+massage+Chiang+Mai' },
+                { name: 'Lavender Toksen Sappaya', days: '每日開放', time: '10:00-22:00', desc: '評價 4.7 星 / 泰北傳統木槌按摩', link: 'https://www.google.com/maps/search/?api=1&query=Lavender+Toksen+Sappaya+Massage+Chiang+Mai' }
+            ]
+
             const temples = [
                 { name: '柴迪隆寺', days: '每日開放', time: '05:00-22:30', tag: '最震撼', desc: '強烈推薦夜訪', link: 'https://www.google.com/maps/search/?api=1&query=Wat+Chedi+Luang+Chiang+Mai' },
                 { name: '帕邢寺', days: '每日開放', time: '09:00-18:00', tag: '最華麗', desc: '週日夜市期間人很多', link: 'https://www.google.com/maps/search/?api=1&query=Wat+Phra+Singh+Chiang+Mai' },
@@ -529,7 +575,7 @@
 
             return { 
                 activeTab, activeDay, days, currentItinerary, 
-                foods, markets, temples, 
+                foods, markets, spas, temples, 
                 exchangeRate, localExpenses, newItem, newAmount, newCurrency, addExpense, removeExpense, totalTWD, totalTHB,
                 convertTHB, convertTWD, updateTHB, updateTWD
             }
